@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio showcase — projects, about and contact." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232B2B2B'/%3E%3Ctext x='50' y='55' font-size='50' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="logo" href="#home" aria-label="Go to home">YourName</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌗</button>
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav" hidden>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1 class="hero-title">Hi, I'm Your Name.</h1>
+          <p class="hero-sub">I design and build modern, accessible, responsive websites and apps — focused on performance and great UX.</p>
+          <p class="hero-cta">
+            <a class="btn" href="#projects">See my work</a>
+            <a class="btn ghost" href="#contact">Contact me</a>
+          </p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <!-- Decorative SVG -->
+          <svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#7F5AF0"/><stop offset="1" stop-color="#00C2FF"/></linearGradient>
+            </defs>
+            <rect rx="18" width="320" height="240" fill="url(#g)"></rect>
+            <g transform="translate(24,24)" fill="rgba(255,255,255,0.9)">
+              <rect x="0" y="0" width="120" height="18" rx="6"></rect>
+              <rect x="0" y="34" width="200" height="14" rx="6"></rect>
+              <rect x="0" y="58" width="320" height="8" rx="4"></rect>
+              <rect x="0" y="76" width="140" height="10" rx="4"></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects section">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="lead">A handful of projects that illustrate the kind of work I do.</p>
+        <div id="projects-grid" class="projects-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-grid">
+          <div>
+            <p>I’m a front-end developer/designer who cares about accessibility, performance, and clear UX. I enjoy turning complex problems into simple and beautiful interfaces.</p>
+            <ul>
+              <li>HTML, CSS, JavaScript (vanilla), React</li>
+              <li>Responsive & accessible UI</li>
+              <li>Performance & SEO</li>
+            </ul>
+            <p><a class="btn" href="#contact">Work with me</a></p>
+          </div>
+          <div>
+            <h3>Skills & Tools</h3>
+            <p>Design systems, Figma, Git, CI/CD, Webpack/Vite, Lighthouse</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>If you like what you see — get in touch. For quick messages use email or social links below.</p>
+        <div class="contact-grid">
+          <form class="contact-form" action="mailto:you@example.com" method="post" enctype="text/plain">
+            <label>
+              <span>Name</span>
+              <input name="name" type="text" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" required />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <p><button class="btn" type="submit">Send email</button></p>
+          </form>
+          <aside class="contact-aside">
+            <h3>Other ways</h3>
+            <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+            <p>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></p>
+            <p>LinkedIn: <a href="#" target="_blank" rel="noopener">LinkedIn profile</a></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Your Name — Built with care.</p>
+      <p><a href="#home">Back to top</a></p>
+    </div>
+  </footer>
+
+  <!-- Modal for project details -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close" id="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
